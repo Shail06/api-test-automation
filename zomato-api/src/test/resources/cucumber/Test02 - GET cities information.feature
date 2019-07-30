@@ -1,4 +1,4 @@
-Feature: Test the functionality of Cities Endpoint
+Feature: 02-Test the functionality of Cities Endpoint
 
   This feature checks that Zomato's cities API method
   returns correct data structure of cities information
