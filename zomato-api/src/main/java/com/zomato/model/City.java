@@ -11,6 +11,7 @@ public class City {
     private String country_name;
     private String country_flag_url;
     private int should_experiment_with;
+    private int has_go_out_tab;
     private int discovery_enabled;
     private int has_new_ad_format;
     private int is_state;
@@ -34,6 +35,13 @@ public class City {
         this.should_experiment_with = should_experiment_with;
     }
 
+    public int getHas_go_out_tab() {
+        return has_go_out_tab;
+    }
+
+    public void setHas_go_out_tab(int has_go_out_tab) {
+        this.has_go_out_tab = has_go_out_tab;
+    }
     public int getDiscovery_enabled() {
         return discovery_enabled;
     }

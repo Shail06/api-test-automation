@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  * The Test Runner executes each feature in Feature files present in cucumber directory
  */
 @CucumberOptions(
-        features = {"src/test/resources/cucumber"},
+        features = {"src/test/resources/features"},
         glue = {"stepdefs"},
         tags = {"~@Ignore"},
         format = {"html:target/cucumber-html-report",

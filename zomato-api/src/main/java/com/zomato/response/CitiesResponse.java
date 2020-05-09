@@ -12,6 +12,7 @@ public class CitiesResponse {
     private String status;
     private int has_more;
     private int has_total;
+    private boolean user_has_addresses;
 
     public String getStatus() {
         return status;
@@ -43,5 +44,13 @@ public class CitiesResponse {
 
     public void setLocation_suggestions(City[] location_suggestions) {
         this.location_suggestions = location_suggestions;
+    }
+
+    public boolean isUser_has_addresses() {
+        return user_has_addresses;
+    }
+
+    public void setUser_has_addresses(boolean user_has_addresses) {
+        this.user_has_addresses = user_has_addresses;
     }
 }

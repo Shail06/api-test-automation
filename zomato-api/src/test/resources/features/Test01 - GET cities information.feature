@@ -5,7 +5,7 @@ Feature: 01-Test the functionality of Cities Endpoint
   based on the query parameters.
   Also, the aim is to validate the API response structure
 
-  Scenario Outline: Check that the API works for valid parameter values
+  Scenario Outline: City information is correctly returned for <queryParams> = <values>
     Given I want to test the details of cities
     And I have set the query parameters <queryParams> with valid data <values>
     And I have set the correct headers for the request

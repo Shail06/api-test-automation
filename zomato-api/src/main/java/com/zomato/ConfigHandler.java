@@ -1,6 +1,8 @@
 package com.zomato;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -14,7 +16,8 @@ public class ConfigHandler {
 
     public ConfigHandler() throws Exception {
         readConfig();
-        this.environment = System.getenv("ENV");
+        this.environment = System.getProperty("ENV");
+        System.out.println("Test Environment = " + this.environment);
         this.host = config.getProperty("com.zomato." + environment.toLowerCase() + ".host");
         this.key = config.getProperty("com.zomato." + environment.toLowerCase() + ".key");
     }
