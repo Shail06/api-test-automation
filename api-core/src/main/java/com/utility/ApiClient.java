@@ -1,5 +1,6 @@
 package com.utility;
 
+import io.restassured.mapper.ObjectMapper;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 
@@ -13,6 +14,12 @@ public class ApiClient {
     private String host;
     private Endpoint endpoint;
     private HashMap<String, String> queryParameters;
+    private Object requestBody;
+
+    public void setRequestBody(Object requestBody) {
+        this.requestBody = requestBody;
+    }
+
     private HashMap<String, String> headers;
     private Response restResponse;
 
@@ -51,11 +58,11 @@ public class ApiClient {
         String methodType = this.endpoint.getMethodType();
 
         if (requestType.equalsIgnoreCase("REST")) {
-            switch (methodType) {
-                case "GET":
-                    restResponse = RestHelper.sendRestRequest(methodUri, this.queryParameters, this.headers);
-                    break;
-            }
+            restResponse = RestHelper.sendRestRequest(methodUri,
+                    methodType,
+                    this.queryParameters,
+                    this.headers,
+                    this.requestBody);
         }
     }
 
@@ -69,7 +76,7 @@ public class ApiClient {
 
     /**
      * @param responseClass: Will have an POJO Representation of the JSON response
-     * @return: The response JSON body deserialized into Java Object
+     * @return : The response JSON body deserialized into Java Object
      */
     public Object getReponseBodyAsObject(Class responseClass) {
         return this.restResponse.then().extract().as(responseClass, ObjectMapperType.JACKSON_2);
