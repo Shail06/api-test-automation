@@ -37,6 +37,11 @@ class RestHelper {
                 response = requestSpecification
                         .body(requestBody)
                         .put(methodUri);
+                break;
+            case "DELETE":
+                response = requestSpecification
+                        .delete(methodUri);
+                break;
         }
         return response;
     }
