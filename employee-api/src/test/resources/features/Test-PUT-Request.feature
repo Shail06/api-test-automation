@@ -1,6 +1,6 @@
-Feature: Test Get All Employee Data
-  Scenario: Happy Path for POST Employees
-    Given I want to add one Employee
+Feature: Test PUT Endpoint
+  Scenario: Happy Path for PUT Employees
+    Given I want to update one Employee with employee_id 121
     And I setup the new Employee data
     When I send the request
-    Then I get response 201
+    Then I get response 200

@@ -62,4 +62,12 @@ public class Employee_Step_Definitions {
         employee.setPhone(utils.randomPhoneNumber());
         apiClient.setRequestBody(employee);
     }
+
+    @Given("^I want to update one Employee with employee_id (\\d+)$")
+    public void iWantToUpdateOneEmployeeWithEmployee_id(int employeeId) {
+        employeeEndpoint.setMethod("/api/employees/"+employeeId);
+        employeeEndpoint.setMethodType("PUT");
+        employeeEndpoint.setRequestType("REST");
+        apiClient.setEndpoint(employeeEndpoint);
+    }
 }
