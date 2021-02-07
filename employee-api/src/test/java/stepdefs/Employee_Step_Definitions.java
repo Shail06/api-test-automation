@@ -70,4 +70,12 @@ public class Employee_Step_Definitions {
         employeeEndpoint.setRequestType("REST");
         apiClient.setEndpoint(employeeEndpoint);
     }
+
+    @Given("^I want to delete one Employee with employee_id (\\d+)$")
+    public void iWantToDeleteOneEmployeeWithEmployee_id(int employeeId) {
+        employeeEndpoint.setMethod("/api/employees/"+employeeId);
+        employeeEndpoint.setMethodType("DELETE");
+        employeeEndpoint.setRequestType("REST");
+        apiClient.setEndpoint(employeeEndpoint);
+    }
 }
