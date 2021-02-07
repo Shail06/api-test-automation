@@ -33,6 +33,10 @@ class RestHelper {
                         .body(requestBody)
                         .post(methodUri);
                 break;
+            case "PUT":
+                response = requestSpecification
+                        .body(requestBody)
+                        .put(methodUri);
         }
         return response;
     }
