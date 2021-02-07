@@ -11,6 +11,7 @@
     <modules>
         <module>api-core</module>
         <module>zomato-api</module>
+        <module>employee-api</module>
     </modules>
 
     <properties>
