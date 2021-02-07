@@ -13,9 +13,20 @@ The project is organized into two Maven modules
 
 ## Test Execution Steps
 
-**PRE-REQUISITE**: The system needs to have JAVA 8 and MAVEN installed
+**PRE-REQUISITE**: The system needs to have JAVA 8 and Apache Maven 3.6.3 installed
 
-
+0. Clean install the project to install all dependencies
+      ```
+      mvn clean install
+      ```
+    
+    For executing Tests of Individual Modules, following are the commands:
+    ```
+    mvn test -pl zomato-api    // Runs Tests in Zomato-API module
+    mvn test -pl employee-api   // Runs Tests in Employee-API module
+    ```
+      
+### Running Zomato API Tests      
 1. Set the user-key for the requests in 
    **`zomato-api/src/main/resources/zomato-config.properties`**
    
@@ -26,7 +37,7 @@ The project is organized into two Maven modules
    ```
 2. In the project directory i.e. api-test-automation, Open the terminal / command prompt and execute the following:
     ```
-    mvn -DENV=DEV clean test
+    mvn -DENV=DEV test
     ```
 
 3. Test Reports will be generated at the following path:
