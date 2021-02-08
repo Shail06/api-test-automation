@@ -5,11 +5,12 @@ Project to test APIs using Rest-Assured Java
 ## Project Structure
 
 The project is organized into two Maven modules
-* ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `api-core`
+* ![#fa9805](https://placehold.it/15/fa9805/000000?text=+) `api-core`
       - Contains Core Methods for HTTP Request Handling
 * ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `zomato-api`
       - Contains Zomato API Specific classes and Cucumber Tests
-
+* ![#36fa05](https://placehold.it/15/36fa05/000000?text=+) `employee-api`
+      - Contains Employee API Specific classes and Cucumber Tests
 
 ## Test Execution Steps
 
