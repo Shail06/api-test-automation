@@ -4,7 +4,7 @@ Project to test APIs using Rest-Assured Java
 
 ## Project Structure
 
-The project is organized into two Maven modules
+The project is organized into multiple Maven modules
 * ![#fa9805](https://placehold.it/15/fa9805/000000?text=+) `api-core`
       - Contains Core Methods for HTTP Request Handling
 * ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `zomato-api`
