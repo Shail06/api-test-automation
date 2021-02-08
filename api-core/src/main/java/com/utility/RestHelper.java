@@ -3,9 +3,9 @@ package com.utility;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
 import java.util.HashMap;
 import java.util.Map;
+
 
 
 
@@ -16,7 +16,7 @@ class RestHelper {
             headers = new HashMap<>();
             headers.put("Content-Type", "application/json");
         }
-        RequestSpecification requestSpecification = RestAssured.given().headers(headers);
+        RequestSpecification requestSpecification = RestAssured.given().relaxedHTTPSValidation().headers(headers);
         Response response = null;
         switch (methodType) {
             case "GET":
