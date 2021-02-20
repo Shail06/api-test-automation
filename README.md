@@ -16,17 +16,31 @@ The project is organized into multiple Maven modules
 
 **PRE-REQUISITE**: The system needs to have JAVA 8 and Apache Maven 3.6.3 installed
 
-0. Clean install the project to install all dependencies
+0. Setup the Infrastructure
+
+    ```
+    cd docker
+    docker build -t ubuntu_jdk8_maven363:v1 .
+   ```
+   This will build the dependencies (java, maven etc.) and pull the source code.
+   On successful Docker Image build, Run the container & Go inside it to execute the tests
+    ```
+    docker run --name test  -ti ubuntu_jdk8_maven363:v1 /bin/bash
+   ```
+1. Inside the project direcotry, clean install the project to install all dependencies
       ```
-      mvn clean install
+      mvn clean install -Dmaven.test.skip=true
       ```
     
     For executing Tests of Individual Modules, following are the commands:
     ```
-    mvn test -pl zomato-api    // Runs Tests in Zomato-API module
-    mvn test -pl employee-api   // Runs Tests in Employee-API module
+    mvn -DENV=DEV test -pl zomato-api    // Runs Tests in Zomato-API module
+   
+    mvn -DENV=DEV test -pl employee-api 
+    mvn -DENV=DOCKER test -pl employee-api   // Runs Tests in Employee-API module
     ```
-      
+
+    
 ### Running Zomato API Tests      
 1. Set the user-key for the requests in 
    **`zomato-api/src/main/resources/zomato-config.properties`**
